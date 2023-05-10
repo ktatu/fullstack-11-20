@@ -26,14 +26,14 @@ const App = () => {
             blogService.setToken(user.token)
         }
     }, [])
-    
+
     console.log("test")
 
     useEffect(() => {
         blogService.getAll().then((blogs) => {
             console.log("blogs ", blogs)
             blogs.sort((blog1, blog2) => blog2.likes - blog1.likes)
-            setBlogs( blogs )
+            setBlogs(blogs)
         })
     }, [])
 
@@ -131,17 +131,24 @@ const App = () => {
 
             <h2>create new</h2>
 
-            <Togglable buttonLabel="new blog" ref={blogFormRef}>
-                <BlogForm
-                    createBlog={createBlog}
-                />
+            <Togglable
+                buttonLabel="new blog"
+                ref={blogFormRef}
+            >
+                <BlogForm createBlog={createBlog} />
             </Togglable>
 
             <br />
 
-            {blogs.map(blog =>
-                <Blog key={blog.id} blog={blog} addLike={updateLikes} loggedInUsername={user.username} deleteBlog={deleteBlog} />
-            )}
+            {blogs.map((blog) => (
+                <Blog
+                    key={blog.id}
+                    blog={blog}
+                    addLike={updateLikes}
+                    loggedInUsername={user.username}
+                    deleteBlog={deleteBlog}
+                />
+            ))}
         </div>
     )
 }
