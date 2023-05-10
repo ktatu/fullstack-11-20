@@ -4,7 +4,7 @@
     "description": "",
     "scripts": {
         "start": "npm start --workspaces",
-        "build": "cd frontend && npm run build && mv build ../"
+        "build": "cd frontend && npm run build && mv build/ ../backend"
     },
     "author": "ktatu",
     "license": "ISC",
