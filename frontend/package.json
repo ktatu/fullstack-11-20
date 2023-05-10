@@ -14,10 +14,10 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
+        "test:nowatch": "react-scripts test --watchAll=false",
         "eject": "react-scripts eject",
         "lint": "eslint . ",
         "lint:fix": "eslint --fix .",
-        "test-no-watch": "CI=TRUE react-scripts-test",
         "cypress": "cypress open"
     },
     "eslintConfig": {
