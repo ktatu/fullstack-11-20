@@ -1,0 +1,10 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxvZ2luVGVzdDIiLCJpZCI6IjVmMTRhYThhNDRlOTJjM2FhODZkZTk3OCIsImlhdCI6MTU5NTE5MDc4OX0.nKn1TMnaqe8yM_LLhv5tM8dePvGUR9o98x3dooNR-AY
+
+{
+	"title": "blogToRemove2",
+	"author": "blogToRemove2",
+	"url": "blogToRemove2",
+	"likes": 5
+}
