@@ -6,17 +6,19 @@ on:
       ./backend/
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   continuous_integration:
     runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./backend/
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: "16.13.0"
-      - name: Set working directory
-        working-directory: ./backend/
       - name: Install dependencies 
         run: npm install  
       - name: Check style
