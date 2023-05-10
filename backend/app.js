@@ -13,7 +13,6 @@ const logger = require("./utils/logger")
 const mongoose = require("mongoose")
 
 logger.info("connecting to", config.MONGODB_URI)
-console.log("test")
 
 mongoose
     .connect(config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
