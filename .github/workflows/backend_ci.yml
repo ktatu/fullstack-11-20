@@ -24,7 +24,9 @@ jobs:
               run: npm ci
             - name: Check style
               run: npm run lint
-            - name: Set mongodb test uri address
-              run: echo "TEST_MONGODB_URI=$TEST_MONGODB_URI" >> .env
+            - name: Setup env file for unit tests
+              run: |
+                echo "TEST_MONGODB_URI=$TEST_MONGODB_URI" >> .env
+                echo "SECRET=$SECRET" >> .env
             - name: Unit tests
               run: npm run test
