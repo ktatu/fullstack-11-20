@@ -24,7 +24,7 @@ jobs:
               run: npm install
             - name: Check style
               run: npm run lint
-            - name: Setup env file for unit tests
-              run: echo "TEST_MONGODB_URI=$TEST_MONGODB_URI" >> .env && echo "SECRET=$SECRET" >> .env
+            - name: Setup .env file for unit tests
+              run: echo "TEST_MONGODB_URI=$TEST_MONGODB_URI" >> .env && echo "SECRET=$SECRET" >> .env && echo "PORT=3003"
             - name: Unit tests
               run: npm run test
