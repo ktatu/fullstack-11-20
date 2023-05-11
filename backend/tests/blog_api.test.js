@@ -7,7 +7,6 @@ const User = require("../models/user")
 const helper = require("./test_utils/blog_test_helper")
 
 jest.useRealTimers()
-jest.setTimeout(10000)
 
 let token
 
