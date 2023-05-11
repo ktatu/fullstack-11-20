@@ -30,6 +30,12 @@ describe("GET-request / blog-retrieval tests", () => {
             .get("/api/blogs")
             .expect(200)
             .expect("Content-Type", /application\/json/)
+            .catch((error) => {
+                console.log("-----------------------------------")
+                console.log("ERROR IN REQUEST")
+                console.log("-----------------------------------")
+                console.log(error)
+            })
     })
 
     test("retrieval from database returns correct amount of blogs", async () => {
