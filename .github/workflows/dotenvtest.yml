@@ -2,14 +2,14 @@ name: Dotenv test
 
 on:
   workflow_dispatch:
-      
+
 jobs:
   test:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
       - name: Env variables to .env
-        run: echo "TEST1=${{ env.TEST1 }}" >> .env
+        run: echo "TEST1=${{ secrets.TEST1 }}" >> .env
       - name: Print .env contents
         run: cat .env
         
