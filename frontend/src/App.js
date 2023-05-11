@@ -27,8 +27,6 @@ const App = () => {
         }
     }, [])
 
-    console.log("test")
-
     useEffect(() => {
         blogService.getAll().then((blogs) => {
             console.log("blogs ", blogs)
