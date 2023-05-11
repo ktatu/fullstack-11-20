@@ -6,8 +6,6 @@ const Blog = require("../models/blog")
 const User = require("../models/user")
 const helper = require("./test_utils/blog_test_helper")
 
-jest.useRealTimers()
-
 let token
 
 beforeAll(async () => {
@@ -17,6 +15,10 @@ beforeAll(async () => {
         .post("/api/login")
         .send({ username: helper.blogTestUser.username, password: helper.blogTestUser.password })
     token = result.body.token
+
+    console.log("-----------------------------------")
+    console.log("LOG IN BEFOREALL")
+    console.log("-----------------------------------")
 })
 
 beforeEach(async () => {
