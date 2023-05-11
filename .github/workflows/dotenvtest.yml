@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Env variables to .env
-        run: echo "TEST1=${{ TEST1 }}" >> .env
+        run: echo "TEST1=${{ env.TEST1 }}" >> .env
       - name: Print .env contents
         run: cat .env
         
