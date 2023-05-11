@@ -113,6 +113,6 @@ describe("POST-request / blog-saving related tests", () => {
     })
 })
 
-afterAll(async () => {
+afterAll(() => {
     mongoose.connection.close()
 })
