@@ -15,10 +15,6 @@ beforeAll(async () => {
         .post("/api/login")
         .send({ username: helper.blogTestUser.username, password: helper.blogTestUser.password })
     token = result.body.token
-
-    console.log("-----------------------------------")
-    console.log("LOG IN BEFOREALL")
-    console.log("-----------------------------------")
 })
 
 beforeEach(async () => {
@@ -32,12 +28,6 @@ describe("GET-request / blog-retrieval tests", () => {
             .get("/api/blogs")
             .expect(200)
             .expect("Content-Type", /application\/json/)
-            .catch((error) => {
-                console.log("-----------------------------------")
-                console.log("ERROR IN REQUEST")
-                console.log("-----------------------------------")
-                console.log(error)
-            })
     })
 
     test("retrieval from database returns correct amount of blogs", async () => {
