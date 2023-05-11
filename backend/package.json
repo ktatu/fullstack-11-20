@@ -8,7 +8,7 @@
         "start:test": "cross-env NODE_ENV=test node index.js",
         "start:dev": "cross-env NODE_ENV=development nodemon index.js",
         "lint": "eslint .",
-        "test": "cross-env NODE_ENV=test jest --verbose --runInBand"
+        "test": "cross-env NODE_ENV=test jest --verbose --runInBand --force-exit"
     },
     "author": "ktatu",
     "license": "ISC",
