@@ -26,3 +26,5 @@ jobs:
               run: npm run lint
             - name: Unit tests
               run: npm run test
+            - name: Set mongodb test uri address
+              run: echo "TEST_MONGODB_URI=$TEST_MONGODB_URI" >> .env
