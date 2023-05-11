@@ -18,7 +18,8 @@
         "eject": "react-scripts eject",
         "lint": "eslint . ",
         "lint:fix": "eslint --fix .",
-        "cypress": "cypress open"
+        "cypress": "cypress open",
+        "cypress:e2e": "cypress run"
     },
     "eslintConfig": {
         "extends": [
