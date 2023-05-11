@@ -32,4 +32,5 @@ module.exports = {
             version: "detect",
         },
     },
+    ignorePatterns: ["cypress.config.js"],
 }
