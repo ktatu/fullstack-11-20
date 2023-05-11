@@ -7,7 +7,7 @@ const User = require("../models/user")
 const helper = require("./test_utils/blog_test_helper")
 
 jest.useRealTimers()
-jest.setTimeout(50000)
+jest.setTimeout(10000)
 
 let token
 
@@ -18,8 +18,6 @@ beforeAll(async () => {
         .post("/api/login")
         .send({ username: helper.blogTestUser.username, password: helper.blogTestUser.password })
     token = result.body.token
-
-    console.log("token ", token)
 })
 
 beforeEach(async () => {
