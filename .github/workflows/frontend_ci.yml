@@ -39,5 +39,6 @@ jobs:
                 command: npm run test:e2e
                 start: npm start
                 wait-on: "http://localhost:3000"
+                working-directory: frontend
                 
                 
