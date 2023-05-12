@@ -37,8 +37,8 @@ jobs:
               uses: cypress-io/github-action@v5
               with:
                 command: npm run test:e2e
-                start: npm start
-                wait-on: "http://localhost:3000"
+                start: npm start, cd ../backend && npm start
+                wait-on: "http://localhost:3000, http://localhost:3003"
                 working-directory: frontend
                 
                 
