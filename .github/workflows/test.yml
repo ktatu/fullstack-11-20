@@ -14,5 +14,5 @@ jobs:
           - name: Print directory
             run: ls -a
           - name: Change directory
-            working-directory: ${{ github.workspace }}
+            working-directory: ../
             run: ls -a
