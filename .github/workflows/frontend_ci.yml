@@ -38,11 +38,14 @@ jobs:
             - name: Install backend dependencies for end to end tests
               run: npm ci
               working-directory: backend
+            - name: Start backend
+              run: npm run start:test &
+              working-directory: backend  
             - name: Run end to end tests
               uses: cypress-io/github-action@v5
               with:
                 command: npm run cypress:e2e
-                start: npm start, npm run start:backendtest
+                start: npm start
                 wait-on: "http://localhost:3000, http://localhost:3003"
                 working-directory: frontend
                 
