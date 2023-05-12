@@ -1,0 +1,17 @@
+name: Testing stuff
+
+on:
+    workflow_dispatch:
+
+jobs:
+    continuous_integration:
+        runs-on: ubuntu-20.04
+        defaults:
+            run:
+                working-directory: frontend
+        steps:
+          - name: Print directory
+            run: ls -a
+          - name: Change directory
+            working-directory: ${{ github.workspace }}
+            run: ls -a
