@@ -28,13 +28,12 @@ jobs:
               run: npm run build
             - name: Unit tests
               run: npm run test:nowatch
-            - name: Change working directory
-              working-directory: ${{ github.workspace }}
             - name: End to end tests
               uses: cypress-io/github-action@v5
               with:
                 command: npm run test:e2e
                 start: npm run start:frontend, npm run start:backend
                 wait-on: "http://localhost:3003, http://localhost:3000"
+                working-directory: ${{ github.workspace }}
                 
                 
