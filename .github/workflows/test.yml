@@ -10,6 +10,7 @@ jobs:
             run:
                 working-directory: frontend
         steps:
+          - uses: actions/checkout@v3
           - name: Print directory
             run: ls -a
           - name: Change directory
