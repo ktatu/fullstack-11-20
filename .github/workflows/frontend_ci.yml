@@ -2,16 +2,16 @@ name: Frontend CI
 
 on:
     push:
-        branches:
-            - main
-        paths:
-            - "frontend/**.js"
+        #branches:
+            #- main
+        #paths:
+            #- "frontend/**.js"
 
     workflow_dispatch:
     
 env:
   TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
-  PORT: ${{ secrets.PORT }}
+  PORT: ${{ vars.BACKEND_PORT }}
   SECRET: ${{ secrets.SECRET }}
 
 jobs:
