@@ -8,6 +8,11 @@ on:
             - "frontend/**.js"
 
     workflow_dispatch:
+    
+env:
+  TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+  PORT: ${{ secrets.PORT }}
+  SECRET: ${{ secrets.SECRET }}
 
 jobs:
     continuous_integration:
@@ -36,8 +41,8 @@ jobs:
             - name: Run end to end tests
               uses: cypress-io/github-action@v5
               with:
-                command: npm run test:e2e
-                start: npm start, cd ../backend && npm start
+                command: npm run cypress:e2e
+                start: npm start, npm run start:backendtest
                 wait-on: "http://localhost:3000, http://localhost:3003"
                 working-directory: frontend
                 
