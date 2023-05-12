@@ -4,6 +4,8 @@
     "description": "",
     "scripts": {
         "start": "npm start --workspace ./backend",
+        "start:frontend": "npm start --workspace ./frontend",
+        "start:backend": "npm start --workspace ./backend",
         "build": "cd frontend && npm run build && mv build/ ../backend"
     },
     "author": "ktatu",
