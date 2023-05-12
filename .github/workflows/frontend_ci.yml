@@ -8,6 +8,11 @@ on:
             - "frontend/**.js"
 
     workflow_dispatch:
+    
+env:
+  TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+  PORT: ${{ secrets.PORT }}
+  SECRET: ${{ secrets.SECRET }}
 
 jobs:
     continuous_integration:
