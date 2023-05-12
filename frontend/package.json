@@ -12,6 +12,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
+        "start:backendtest": "cd ../backend && npm run start:test",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "test:nowatch": "react-scripts test --watchAll=false",
