@@ -11,7 +11,6 @@ on:
     
 env:
   TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
-  PORT: ${{ vars.BACKEND_PORT }}
   SECRET: ${{ secrets.SECRET }}
 
 jobs:
