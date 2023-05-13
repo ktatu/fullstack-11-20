@@ -15,11 +15,14 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+            node-version: "16.13.0"
       - name: Install backend dependencies
         run: npm ci
         working-directory: backend
       - name: Start backend
-        run: npm run start:test
+        run: npm run start:test &
         working-directory: backend
       - name: Run end to end tests
         uses: cypress-io/github-action@v5
