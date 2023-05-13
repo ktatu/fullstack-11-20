@@ -11,23 +11,17 @@ env:
     SECRET: ${{ secrets.SECRET }}
   
 jobs:
-  testing:
+          
+  testing2:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
             node-version: "16.13.0"
-      - name: Install backend dependencies
-        run: npm ci
-        working-directory: backend
-      - name: Start backend
-        run: npm run start:test &
-        working-directory: backend
       - name: Run end to end tests
         uses: cypress-io/github-action@v5
         with:
           command: npm run test:e2e
-          start: npm run start:frontend
-          wait-on: "http://localhost:3000"
-  
+          start: npm run start:frontend, npm run start:backendtest
+          wait-on: "http://localhost:3000, http://localhost:3003"
