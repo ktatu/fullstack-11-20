@@ -2,10 +2,10 @@ name: Frontend CI
 
 on:
     push:
-        #branches:
-        #- main
-        #paths:
-        #- "frontend/**.js"
+        branches:
+          - main
+        paths:
+          - "frontend/**.js"
 
     workflow_dispatch:
 
