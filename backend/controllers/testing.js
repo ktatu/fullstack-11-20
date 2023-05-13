@@ -8,4 +8,8 @@ router.post("/reset", async (request, response) => {
     response.status(204).end()
 })
 
+router.get("/check", async (request, response) => {
+    return response.send("ok")
+})
+
 module.exports = router

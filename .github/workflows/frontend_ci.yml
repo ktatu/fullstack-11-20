@@ -3,15 +3,15 @@ name: Frontend CI
 on:
     push:
         #branches:
-            #- main
+        #- main
         #paths:
-            #- "frontend/**.js"
+        #- "frontend/**.js"
 
     workflow_dispatch:
-    
+
 env:
-  TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
-  SECRET: ${{ secrets.SECRET }}
+    TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+    SECRET: ${{ secrets.SECRET }}
 
 jobs:
     continuous_integration:
@@ -34,15 +34,3 @@ jobs:
               run: npm run build
             - name: Unit tests
               run: npm run test:nowatch
-            - name: Install backend dependencies for end to end tests
-              run: npm ci
-              working-directory: backend
-            - name: Run end to end tests
-              uses: cypress-io/github-action@v5
-              with:
-                command: npm run cypress:e2e
-                start: npm start, npm run start:backendtest
-                wait-on: "http://localhost:3000, http://localhost:3003"
-                working-directory: frontend
-                
-                

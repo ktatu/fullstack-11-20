@@ -13,6 +13,7 @@
     "scripts": {
         "start": "react-scripts start",
         "start:backendtest": "cd ../backend && npm run start:test",
+        "testasd": "PORT=3003 react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "test:nowatch": "react-scripts test --watchAll=false",
