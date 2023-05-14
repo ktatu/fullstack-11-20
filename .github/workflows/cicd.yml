@@ -68,3 +68,17 @@ jobs:
           command: npm run test:e2e
           start: npm run start:frontend
           wait-on: "http://localhost:3000"
+          
+  deploy:
+    runs-on: ubuntu-20.04
+    needs: [frontend_ci, backend_ci, end_to_end]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Fly.io deploy
+        run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
