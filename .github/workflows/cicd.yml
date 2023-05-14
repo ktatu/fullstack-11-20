@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   
 env:
-    TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+    MONGODB_URI: ${{ secrets.MONGODB_URI }}
     SECRET: ${{ secrets.SECRET }}
   
 jobs:
@@ -79,7 +79,7 @@ jobs:
           node-version: '16'
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - name: Configure backend .env file
-        run: echo "TEST_MONGODB_URI=${{ secrets.TEST_MONGODB_URI }}" >> .env && echo "SECRET=${{ secrets.SECRET }}" >> .env
+        run: echo "MONGODB_URI=${{ secrets.MONGODB_URI }}" >> .env && echo "SECRET=${{ secrets.SECRET }}" >> .env
         working-directory: backend
       - name: Fly.io deploy
         run: flyctl deploy --remote-only
