@@ -14,8 +14,8 @@
     "author": "ktatu",
     "license": "ISC",
     "workspaces": [
-        "./backend",
-        "./frontend"
+        "backend",
+        "frontend"
     ],
     "devDependencies": {
         "cypress": "^12.3.0"
