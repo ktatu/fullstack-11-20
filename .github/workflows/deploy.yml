@@ -1,10 +1,6 @@
 name: Deploy to Fly.io
 
 on:
-  workflow_run:
-    workflows: ["Frontend CI", "Backend CI", "End to end tests"]
-    types:
-      - completed
       
   workflow_dispatch:
       
