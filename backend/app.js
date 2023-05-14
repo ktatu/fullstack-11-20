@@ -35,6 +35,10 @@ if (process.env.NODE_ENV === "test") {
     app.use("/api/testing", testingRouter)
 }
 
+app.get("/api/health", (req, res) => {
+    res.send("ok")
+})
+
 app.use("/api/blogs", blogsRouter)
 app.use("/api/users", usersRouter)
 app.use("/api/login", loginRouter)
