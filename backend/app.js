@@ -34,11 +34,9 @@ if (process.env.NODE_ENV === "test") {
     const testingRouter = require("./controllers/testing")
     app.use("/api/testing", testingRouter)
 }
-//eslint-disable-next-line no-unused-vars
+
 app.get("/api/health", (req, res) => {
-    //eslint-disable-next-line no-undef
-    throw error
-    //res.send("ok")
+    res.send("ok")
 })
 
 app.use("/api/blogs", blogsRouter)
