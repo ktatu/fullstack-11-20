@@ -3,7 +3,7 @@ name: Continuous integration / Deployment
 on:
   push:
     branches:
-      - asd
+      - main
       
   workflow_dispatch:
   
