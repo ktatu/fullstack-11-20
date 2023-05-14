@@ -12,6 +12,8 @@ jobs:
   deploy:
     runs-on: ubuntu-20.04
     steps:
+      - uses: actions/checkout@v3
+      - uses: superfly/flyctl-actions/setup-flyctl@master
       - name: Configure .env file
         run: echo "TEST_MONGODB_URI=${{ secrets.TEST_MONGODB_URI }}" >> .env && echo "SECRET=${{ secrets.SECRET }}" >> .env
       - name: Deploy
