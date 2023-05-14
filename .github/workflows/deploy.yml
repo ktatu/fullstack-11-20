@@ -16,6 +16,7 @@ jobs:
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - name: Configure .env file
         run: echo "TEST_MONGODB_URI=${{ secrets.TEST_MONGODB_URI }}" >> .env && echo "SECRET=${{ secrets.SECRET }}" >> .env
+        working-directory: backend
       - name: Deploy
         run: flyctl deploy --remote-only
         env:
