@@ -44,7 +44,7 @@ const App = () => {
 
     const handleLogout = async () => {
         window.localStorage.removeItem("loggedUser")
-        setUser(null)
+        setUser(null);
     }
 
     const handleLogin = async (event) => {
