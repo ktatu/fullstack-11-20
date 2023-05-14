@@ -28,7 +28,7 @@ RUN npm install --production=false
 COPY --link . .
 
 # Build application
-RUN npm clear cache
+RUN npm cache clear
 RUN npm run install:frontend
 RUN npm run build
 
