@@ -7,6 +7,10 @@ on:
       
   workflow_dispatch:
   
+env:
+    TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+    SECRET: ${{ secrets.SECRET }}
+  
 jobs:
   frontend_ci:
     runs-on: ubuntu-20.04
