@@ -76,6 +76,7 @@ jobs:
   deploy_and_release:
     runs-on: ubuntu-20.04
     needs: [frontend_ci, backend_ci, end_to_end]
+    if: ${{ github.event_name == "push" }}
     steps:
         - uses: actions/checkout@v3
         - uses: JorgeLNJunior/render-deploy@v1.3.2
