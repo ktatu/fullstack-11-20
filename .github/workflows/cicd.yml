@@ -70,7 +70,7 @@ jobs:
           start: npm run start:frontend
           wait-on: "http://localhost:3000"
 
-  deploy:
+  deploy_and_release:
     runs-on: ubuntu-20.04
     needs: [frontend_ci, backend_ci, end_to_end]
     steps:
@@ -79,3 +79,10 @@ jobs:
           with:
             service_id: ${{ secrets.RENDER_SERVICE_ID }}
             api_key: ${{ secrets.RENDER_API_KEY }}
+            wait_deploy: true
+        - name: Bump version
+          uses: anothrNick/github-tag-action@1.61.0
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            WITH_V: true
+            DEFAULT_BUMP: 'patch'
