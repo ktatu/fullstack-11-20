@@ -77,6 +77,9 @@ jobs:
     runs-on: ubuntu-20.04
     needs: [frontend_ci, backend_ci, end_to_end]
     steps:
+        - name: Test
+          if: steps.frontend_ci.outcome == "success" && steps.backend_ci.outcome == "success" steps.end_to_end.outcome == "success"
+          run: echo "All previous jobs succeeded"
         - uses: actions/checkout@v3
         - uses: JorgeLNJunior/render-deploy@v1.3.2
           with:
