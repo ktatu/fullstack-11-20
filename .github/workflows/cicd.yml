@@ -86,3 +86,15 @@ jobs:
         run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+          
+  tag_release:
+    runs-on: ubuntu-20.04
+    needs: deploy
+    steps:
+      - uses: actions/checkout@v3
+      - name: Bump version
+        uses: anothrNick/github-tag-action@1.61.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          DEFAULT_BUMP: 'patch'
