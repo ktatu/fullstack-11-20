@@ -96,3 +96,10 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             WITH_V: true
             DEFAULT_BUMP: 'patch'
+        - name: Discord success notification
+          if: success()
+          uses: rjstone/discord-webhook-notify@89b0bf43c2c8514f70d0dcba4a706b904e8a3112
+          with:
+            severity: info
+            description: New version succesfully released and deployed to https://ktatu-11-20.onrender.com/
+            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
