@@ -8,7 +8,7 @@ import Togglable from "./components/Togglable"
 import LoginForm from "./components/LoginForm"
 
 const App = () => {
-    const [blogs, setBlogs] = useState([])
+    const [blogs, setBlogs] = useState([]);
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [user, setUser] = useState(null)
