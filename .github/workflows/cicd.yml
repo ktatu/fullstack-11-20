@@ -40,7 +40,8 @@ jobs:
         - name: Backend tests
           run: npm run test --workspace=backend
         - name: Start backend
-          run: npm run start:test & --workspace=backend
+          run: npm run start:test &
+          working-directory: backend
         - name: Run end to end tests
           uses: cypress-io/github-action@v5
           with:
