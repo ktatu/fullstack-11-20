@@ -79,13 +79,13 @@ jobs:
     if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits)), '#skip') }}
     steps:
         - uses: actions/checkout@v3
-        - uses: JorgeLNJunior/render-deploy@v1.3.2
+        - uses: JorgeLNJunior/render-deploy@354f5b345ec066cc9b78e387040cf5b3478578b5
           with:
             service_id: ${{ secrets.RENDER_SERVICE_ID }}
             api_key: ${{ secrets.RENDER_API_KEY }}
             wait_deploy: true
         - name: Bump version
-          uses: anothrNick/github-tag-action@1.61.0
+          uses: anothrNick/github-tag-action@c360518fb8131e99795f8208f8a6105ceca55ec2
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             WITH_V: true
