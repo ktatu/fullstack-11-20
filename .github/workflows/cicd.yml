@@ -76,7 +76,7 @@ jobs:
   deploy_and_release:
     runs-on: ubuntu-20.04
     needs: [frontend_ci, backend_ci, end_to_end]
-    if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits)), '#skip') && jobs.frontend_ci.result == 'success' }}
+    if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits)), '#skip') && needs.frontend_ci.result == 'success' }}
     steps:
         - uses: actions/checkout@v3
         - uses: JorgeLNJunior/render-deploy@354f5b345ec066cc9b78e387040cf5b3478578b5
