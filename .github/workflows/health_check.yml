@@ -11,13 +11,13 @@ jobs:
       - name: Check the deployed service URL
         id: check
         uses: jtalk/url-health-check-action@v3
-        continue-on-error: true
         with:
           url: https://ktatu-11-20.onrender.com
           max-attempts: 5
           retry-delay: 10s
       - name: Discord notification
         uses: rjstone/discord-webhook-notify@89b0bf43c2c8514f70d0dcba4a706b904e8a3112
+        if: always()
         with:
           severity: info
           description: Health check performed. Was ${{ steps.check.conclusion }}
