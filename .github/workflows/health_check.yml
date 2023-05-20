@@ -1,8 +1,9 @@
 name: Http health check
 
 on:
-  schedule:
-    - cron:  '40 12 * * *'
+  # schedule:
+    # - cron:  '40 12 * * *'
+  workflow_dispatch:
   
 jobs:
   health_check:
